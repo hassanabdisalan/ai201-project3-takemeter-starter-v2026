@@ -39,9 +39,24 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+TakeMeter sorts top-level comments from r/nba into three kinds of post:
+`breakdown`, `take`, and `reaction`. The distinction it is built around is not
+quality — it is **what the writer offers in support of what they claim.** A
+`breakdown` rests on a specific checkable detail the claim would not survive
+without; a `take` asserts a general evaluation and offers nothing; a `reaction`
+is not making a claim about basketball at all.
 
+The community was chosen because a single Post Game Thread holds all three
+within a few comments of each other, and because the hard boundary there is a
+genuine one: r/nba writes takes with statistics attached. *"Lakers are cooked,
+they're 3-7 in their last 10"* names a checkable number and is still a verdict
+the writer reached before the number. A classifier that keys on the presence of
+a stat gets that post wrong, which is exactly the failure the taxonomy and its
+three-step decision rule exist to prevent.
+
+What it is for: triage. The model is small enough to run on every comment in a
+thread, so the useful output is a shortlist of the posts worth reading rather
+than a verdict on any single one.
 
 
 ---
@@ -204,26 +219,58 @@ of next unit's variance. -->
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
+I used Claude heavily on this project, across every milestone. The two moments
+below are the ones that changed the work rather than tidied it. The scope
+disclosure is at the bottom and it is broader than two moments.
 
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
+**Moment 1 — stress-testing the taxonomy before labelling anything**
 
-**Moment 1**
+- *What I asked for:* eight posts that sit exactly on the boundaries of my
+  three definitions, then a classification of each under my decision rule as
+  written. Milestone 2 asks for this; the point was to break the rule early.
+- *What came back:* the rule broke on two of the eight. My first version was a
+  deletion test — remove the specifics, and if the claim still stands it's a
+  `take`. It labelled *"Wemby blocked three in a row and I put my phone down"*
+  as `breakdown`, because the post contains a number. And it labelled *"that
+  no-call at 1:48 was a foul, he got him across the wrist"* as `take`, because
+  "that was a foul" survives deletion.
+- *What I changed:* two fixes, both in the README. The rules are **ordered**
+  now — the `reaction` question runs first, so a post with no basketball claim
+  never reaches the deletion test. And the deletion test gained a **relevance
+  clause**: would someone who disagreed have to answer that detail? Nobody
+  disputing "best passer ever" engages with "14 assists tonight". Anyone
+  disputing the foul has to argue about the wrist.
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+**Moment 2 — arguing against my own acceptance criteria**
 
-**Moment 2**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* for each of my five targets, one reason it might turn out
+  too easy and one reason too hard. No recommendation, no alternative numbers —
+  Milestone 3 is explicit that a criterion I did not write is one I cannot
+  defend, so the numbers had to stay mine.
+- *What came back:* both columns were plausible almost everywhere, which is
+  what the milestone says to expect. One was not symmetric: the too-hard case
+  for criterion 3 is that hitting a 20% floor for `breakdown` means hunting for
+  stat-dense posts — which would satisfy the balance rule *and* hand the model
+  an easier distinction than the real one, inflating criteria 1 and 2 at the
+  same time. Three criteria pass together and none mean what they say.
+- *What I changed:* I kept all five numbers. What changed was the collection
+  protocol, written down in `milestone4.md` before any data was gathered: read
+  threads in order and label what comes, and if `breakdown` runs thin, change
+  which threads I read rather than which posts I pick up.
 
 **Pre-labelling disclosure:**
+
+<!-- ⚠️ FILL THIS IN after Milestone 4. State plainly: how many rows were
+     labelled cold, how many were pre-labelled by a model and corrected, and
+     whether you read every single pre-labelled row or skimmed. Pre-labelling
+     is allowed and expected; not disclosing it is the problem. -->
+
+**Scope disclosure:** beyond the two moments above, Claude drafted the
+taxonomy wording, the five criteria and their justifications, the collection
+protocol, and `check_labels.py`, and ran the Milestone 5 pipeline rehearsal on
+the practice data. The 200 posts, the cold twenty, and the hard cases are mine,
+and every number in `criteria.md` is one I can argue for without the file open.
+
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 

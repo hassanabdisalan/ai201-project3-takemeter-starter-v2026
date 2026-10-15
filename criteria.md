@@ -103,8 +103,7 @@ would be guessing.
 
 ---
 
-## 5. Mean confidence when the model is right exceeds mean confidence when it is
-wrong by at least 0.05, on every seed.
+## 5. Mean confidence when right exceeds mean confidence when wrong by at least 0.05, on every seed.
 
 **Why this target:** A classifier I'd run on everything is only useful if it
 can tell me which calls to check — otherwise I have to read all 200 anyway and

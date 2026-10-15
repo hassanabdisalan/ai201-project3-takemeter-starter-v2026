@@ -61,6 +61,32 @@ than a verdict on any single one.
 
 ---
 
+## Stretch Features — declared before building
+
+Declared here before the work was done, as the brief requires.
+
+**Attempting: a second training run with one hyperparameter changed.**
+
+The plan is to run sections 1–5 twice on the same `labels.csv` and the same
+seed, changing `EPOCHS` from 3 to 5 and nothing else, then record which numbers
+moved and by how much against the first run.
+
+Why this one: it needs no additional labelling, so it cannot disturb the
+balance that criterion 3 depends on. The Milestone 5 rehearsal is also a
+reason to expect it to be informative rather than decorative — on 42 practice
+examples, three epochs left the model close to uniform output (mean confidence
+0.365 when right, 0.358 when wrong, against a 0.333 floor for three labels).
+If 140 examples behave similarly, more epochs is the obvious first thing to
+move, and criterion 5 is the number most likely to respond.
+
+**Not attempting:** a fourth label, or 50 extra examples for the thinnest
+label. Both mean collecting more `breakdown`-adjacent text, which is the one
+thing `milestone4.md` rules out — going hunting for stat-dense posts to fill a
+quota biases the label toward long, number-heavy writing and makes the task
+easier than the real one.
+
+---
+
 ## Label Taxonomy
 
 Three labels, for top-level comments on r/nba game and discussion threads.

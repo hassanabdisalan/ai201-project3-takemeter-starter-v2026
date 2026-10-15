@@ -48,15 +48,16 @@
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+Three labels, for top-level comments on r/nba game and discussion threads.
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+<!-- ⚠️ Examples below are still placeholders. Each needs two REAL posts
+     pasted from the reading in Milestone 1. -->
 
-### `label_one`
+### `breakdown`
 
-**Definition:**
+**Definition:** Makes a claim about basketball and rests it on at least one
+specific, checkable detail — a stat, a minute, a play, a quote, a named
+comparison — that the claim would not survive without.
 
 **Example 1:**
 >
@@ -64,9 +65,22 @@
 **Example 2:**
 >
 
-### `label_two`
+### `take`
 
-**Definition:**
+**Definition:** Asserts a general evaluation of a player, team, or decision,
+offering no support that the evaluation depends on.
+
+**Example 1:**
+>
+
+**Example 2:**
+>
+
+### `reaction`
+
+**Definition:** Responds to the moment rather than arguing about it — the
+writer's own experience of watching, a joke, or an exclamation that makes no
+evaluative claim about basketball.
 
 **Example 1:**
 >
@@ -76,13 +90,50 @@
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `breakdown` vs. `take`.
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+Not because they look alike — because r/nba writes takes with statistics
+attached. *"Lakers are cooked, they're 3-7 in their last 10"* names a checkable
+number and is still a verdict the writer reached before the number. A
+definition that says "has a stat" labels that `breakdown` and teaches the model
+to detect digits.
 
+**The decision rule I used every time.** Three steps, in this order. The order
+matters — see [milestone2.md](milestone2.md), where applying them out of order
+sent a post about a man putting his phone down to `breakdown`.
 
+> **Step 1 — Is there an evaluative claim about basketball at all?**
+> If no, it's `reaction`, and steps 2 and 3 never run. A post can be full of
+> numbers and still stop here.
+>
+> **Step 2 — The deletion test.** Delete every specific detail and read what's
+> left. If the claim still stands exactly as written, lean `take`.
+>
+> **Step 3 — The relevance clause.** Would someone who disagreed have to
+> *answer* that detail? If yes, it was load-bearing and the post is
+> `breakdown`, however short the claim.
+
+Worked through:
+
+> *"Jokic had 14 assists tonight. Best passer in league history, not close."*
+> Step 1: yes, a claim. Step 2: delete the 14 and the claim is untouched. Step
+> 3: a disputer says "one night says nothing about all-time" and never engages
+> the number. → `take`
+
+> *"That no-call at 1:48 was a foul — he got him across the wrist before the
+> ball left his hand."*
+> Step 1: yes. Step 2: deleting the specifics leaves "that was a foul", which
+> stands — so step 2 alone says `take`. Step 3 overrules it: a disputer has to
+> argue about the wrist. → `breakdown`
+
+**Second boundary — `take` vs. `reaction`:** both are short and unsupported.
+Does the post assert anything evaluative about basketball beyond the writer's
+own experience? *"I can't watch this anymore"* → `reaction`. *"This team is
+unwatchable"* → `take`. This is step 1 above, stated as its own rule because it
+decides more posts than anything else in a game thread.
+
+**Tie-break:** when two labels are still defensible after all three steps, pick
+the one the post spends most of its words on. A tie-break, not a licence.
 
 ---
 

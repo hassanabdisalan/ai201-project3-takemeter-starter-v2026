@@ -462,6 +462,11 @@ takes one value across all three seeds rather than varying by split.
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
+<!-- ONE BLOCK PER DISAGREEMENT, and the count has to match the rate above.
+     If you agreed on 22 of 30, there are 8 blocks here, not 2. The rubric
+     asks for every disagreement adjudicated; an unadjudicated one is the
+     cheapest point on this assignment to drop. Copy the block as needed. -->
+
 **1.**
 > *The post:*
 >
@@ -469,7 +474,7 @@ takes one value across all three seeds rather than varying by split.
 >
 > *My call, and why:*
 >
-> *Which pile:*
+> *Which pile (a / b / c):*
 
 **2.**
 > *The post:*
@@ -478,7 +483,70 @@ takes one value across all three seeds rather than varying by split.
 >
 > *My call, and why:*
 >
-> *Which pile:*
+> *Which pile (a / b / c):*
+
+**3.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
+
+**4.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
+
+**5.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
+
+**6.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
+
+**7.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
+
+**8.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
+
+**9.**
+> *The post:*
+>
+> *Staff said / I said:*
+>
+> *My call, and why:*
+>
+> *Which pile (a / b / c):*
 
 **What the pattern in my disagreements tells me:**
 

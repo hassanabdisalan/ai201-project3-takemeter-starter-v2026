@@ -332,12 +332,28 @@ and every number in `criteria.md` is one I can argue for without the file open.
 |---|---|---|---|
 | Overall accuracy |  |  |  |
 | Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| F1 — `breakdown` |  |  |  |
+| F1 — `take` |  |  |  |
+| F1 — `reaction` |  |  |  |
 
 **What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+
+Filed before the baseline was run and before any trained number existed.
+
+I expect the trained model's biggest win over zero-shot to be on `take`.
+`take` is the only one of my three labels defined by an absence — "asserts a
+general evaluation, offering no support that the evaluation depends on." A
+zero-shot model scores a post against a label name and description by
+similarity to the words in it, and absence of evidence has no words to match
+on. So I expect the baseline to scatter unsupported opinions across
+`breakdown` and `reaction` depending on surface features — a number anywhere
+in the post pulling it to `breakdown`, first-person or exclamation pulling it
+to `reaction` — and I expect fine-tuning to recover `take` because 140
+examples can teach a boundary that a definition cannot state positively.
+
+I expect the narrowest gap on `reaction`. It is the label with the most
+surface cues a general model already has — first person, present tense,
+exclamation — so it is the one where no training is least of a handicap.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added

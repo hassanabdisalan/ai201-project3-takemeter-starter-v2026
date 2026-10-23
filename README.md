@@ -368,24 +368,32 @@ exclamation — so it is the one where no training is least of a handicap.
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
+**Device: `cpu`** (PyTorch 2.14.1+cpu, Python 3.13.7, Windows). The same data
+and the same seed on different hardware gives different numbers, so the device
+belongs beside the seeds.
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy on the held-out set | ≥ 0.65, every seed |  |  |  |  |
+| 2. Lowest per-label F1 | ≥ 0.50, every seed |  |  |  |  |
+| 3. Label balance in `labels.csv` | none > 55%, none < 20% |  |  |  |  |
+| 4. Agreement with the staff set | ≥ 70% (21 of 30) |  |  |  |  |
+| 5. Mean confidence right − mean confidence wrong | ≥ 0.05, every seed |  |  |  |  |
+
+Targets are copied from `criteria.md` unchanged, where they were filed in unit
+5 before anything was trained. Criterion 3 is a property of the dataset, so it
+takes one value across all three seeds rather than varying by split.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
+     An image of a matrix earns nothing. Section 7 prints it filled in. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | breakdown | take | reaction |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **breakdown** |  |  |  |
+| **take** |  |  |  |
+| **reaction** |  |  |  |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which

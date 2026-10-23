@@ -411,11 +411,26 @@ takes one value across all three seeds rather than varying by split.
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy on the held-out set | ≥ 0.65, every seed |  |  |
+| 2 | Lowest per-label F1 | ≥ 0.50, every seed |  |  |
+| 3 | Label balance in `labels.csv` | none > 55%, none < 20% |  |  |
+| 4 | Agreement with the staff set | ≥ 70% (21 of 30) |  |  |
+| 5 | Mean confidence right − mean confidence wrong | ≥ 0.05, every seed |  |  |
+
+Targets transcribed unchanged from `criteria.md`. Criteria 1, 2 and 5 say
+"every seed", so one seed below target is a MISSED for that row — a target
+that holds twice out of three has not held.
+
+### Criteria revised
+
+<!-- Fill in AFTER the verdicts. A revision only counts if the criterion could
+     not be measured, or measured the wrong thing. "0.65 turned out optimistic"
+     is not a reason — that is a miss, and a diagnosed miss costs nothing.
+     If you do revise, leave the original line and put the new one underneath
+     with the reason. NEVER delete the original. -->
+
+None so far. All five produced a checkable number in unit 5, so none has yet
+shown the defect that would justify a revision.
 
 **Diagnoses**
 

@@ -577,13 +577,17 @@ shown the defect that would justify a revision.
 
 ### Run Log — After
 
+<!-- Same five rows, same three seeds, same format as Run Log — Before, so the
+     two can be read side by side. Set RUN_LABEL = "after" in section 6 first,
+     or this run overwrites the before numbers. -->
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy on the held-out set | ≥ 0.65, every seed |  |  |  |  |
+| 2. Lowest per-label F1 | ≥ 0.50, every seed |  |  |  |  |
+| 3. Label balance in `labels.csv` | none > 55%, none < 20% |  |  |  |  |
+| 4. Agreement with the staff set | ≥ 70% (21 of 30) |  |  |  |  |
+| 5. Mean confidence right − mean confidence wrong | ≥ 0.05, every seed |  |  |  |  |
 
 **Did it help, and how do I know:**
 
@@ -591,6 +595,36 @@ shown the defect that would justify a revision.
      interesting result and earns full credit. -->
 
 
+
+---
+
+## Stretch 1 — Confidence check
+
+<!-- Declared up front. Are confident predictions right more often than unsure
+     ones? Report the numbers, not just the direction. results.json records a
+     confidence block; criterion 5 is the same comparison. -->
+
+| | Mean confidence | n |
+|---|---|---|
+| Predictions that were right |  |  |
+| Predictions that were wrong |  |  |
+| **Gap** |  |  |
+
+**What this says:**
+
+---
+
+## Stretch 2 — Per-label error write-up
+
+<!-- Declared up front. Take whichever label the confusion matrix says is
+     worst: which label it gets confused with, and what those examples have in
+     common. The second half is the part that earns it. -->
+
+**Worst label, by the matrix:**
+
+**It gets confused with:**
+
+**What those examples have in common:**
 
 ---
 

@@ -63,23 +63,41 @@ than a verdict on any single one.
 
 ## Stretch Features — declared before building
 
-Declared here before the work was done, as the brief requires.
+Declared here before the work was done, as the brief requires. Stretch items
+are all-or-nothing and only count if declared first, so this section is written
+ahead of Milestone 1.
 
-**Attempting: a second training run with one hyperparameter changed.**
+**Attempting 1 — a confidence check.** Whether the model's confident
+predictions are right more often than its unsure ones, reported with the
+numbers behind the comparison. `results.json` already records a confidence
+block, so this is a reading of output the required run produces anyway.
 
-The plan is to run sections 1–5 twice on the same `labels.csv` and the same
-seed, changing `EPOCHS` from 3 to 5 and nothing else, then record which numbers
-moved and by how much against the first run.
+**Attempting 2 — a per-label error write-up.** Once the confusion matrix
+exists, a written analysis of whichever label it says is worst: which label it
+gets confused with, and what those examples have in common.
 
-Why this one: it needs no additional labelling, so it cannot disturb the
-balance that criterion 3 depends on. The Milestone 5 rehearsal is also a
-reason to expect it to be informative rather than decorative — on 42 practice
-examples, three epochs left the model close to uniform output (mean confidence
-0.365 when right, 0.358 when wrong, against a 0.333 floor for three labels).
-If 140 examples behave similarly, more epochs is the obvious first thing to
-move, and criterion 5 is the number most likely to respond.
+Why these two: neither requires additional labelling, so neither can disturb
+the balance criterion 3 depends on, and neither is a change to the system —
+the one-improvement rule stays intact. Both are analyses of runs the required
+features already produce.
 
-**Not attempting:** a fourth label, or 50 extra examples for the thinnest
+**Not attempting — a second measured improvement.** An earlier draft of this
+section declared one: `EPOCHS` 3 to 5, sections 1–5, same seed. Replaced
+before any of it was built, for three reasons. It named the change before the
+diagnosis existed, and Milestone 5 says to pick a training-setting change only
+if the diagnosis actually points at training. A single-seed run cannot fill a
+three-seed run log in the required format. And if the epochs change turned out
+to be the right required improvement, it could not also be the stretch one.
+
+The reasoning behind that draft still stands as a prediction, so it is recorded
+here rather than deleted: on 42 practice examples, three epochs left the model
+close to uniform output — mean confidence 0.365 when right, 0.358 when wrong,
+against a 0.333 floor for three labels (`milestone5.md`). If 140 examples
+behave similarly, criterion 5 is the number most likely to respond to more
+epochs. That is now a hypothesis the confidence check can test, not a change
+committed to in advance.
+
+**Also not attempting:** a fourth label, or 50 extra examples for the thinnest
 label. Both mean collecting more `breakdown`-adjacent text, which is the one
 thing `milestone4.md` rules out — going hunting for stat-dense posts to fill a
 quota biases the label toward long, number-heavy writing and makes the task

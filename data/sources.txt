@@ -1,0 +1,33 @@
+Threads the posts in labels.csv came from, in file order. Each was read from the
+Internet Archive's copy of the old.reddit.com page (Wayback Machine), at the capture
+timestamp shown. Top-level comments only, in displayed order; in SERIOUS threads the
+user posts hang under NBA_MOD's per-game box-score comment, so those count as top level.
+Skipped: AutoModerator/NBA_MOD, deleted/removed, stickied, and link-only comments.
+
+rows  thread   capture         title
+   3  1o77vey  20251015213337  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (October 14, 2025) : nba
+   3  1oghs75  20251027001329  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (October 25, 2025) : nba
+   7  1ohbcbw  20251027220540  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (October 26, 2025) : nba
+   5  1oi69jl  20251029024607  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (October 27, 2025) : nba
+   7  1ojwky8  20251102192540  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (October 29, 2025) : nba
+   8  1opx0s8  20251106202005  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (November 05, 2025) : nba
+   6  1ovz7wo  20251115182908  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (November 12, 2025) : nba
+   6  1oxpy8r  20251117225634  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (November 14, 2025) : nba
+   4  1p80hq7  20251129173929  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (November 26, 2025) : nba
+   8  1p9n9b2  20251129213117  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (November 28, 2025) : nba
+   1  1pfnnrl  20251209132339  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (December 05, 2025) : nba
+   3  1pmcfyg  20251217213503  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (December 13, 2025) : nba
+   1  1q3o8u6  20260109173700  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (January 03, 2026) : nba
+   2  1q6dizi  20260108235718  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (January 06, 2026) : nba
+   2  1qclgmq  20260115072328  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (January 13, 2026) : nba
+   1  1s5xc3i  20260329135259  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (March 27, 2026) : nba
+   5  1t2icpn  20260503202630  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (May 02, 2026) : nba
+   3  1t59hcl  20260508174943  [SERIOUS NEXT DAY THREAD] Post-Game Discussion (May 05, 2026) : nba
+  22  1ogmror  20251105225813  Daily Discussion Thread + Game Thread Index : nba
+   5  1ok6uv3  20251101122508  Daily Discussion Thread + Game Thread Index : nba
+   3  1pdd41o  20251205002316  Daily Discussion Thread + Game Thread Index : nba
+   7  1q4ulld  20260106120323  Daily Discussion Thread + Game Thread Index : nba
+  56  1oh4ioc  20251027195540  [Post Game Thread] The Los Angeles Lakers (2-1) defeat the Sacramento Kings (1-2), 127-120. : nba
+  32  1okj6m0  20251031024123  [Post Game Thread] The Milwaukee Bucks (4-1) defeat the Golden State Warriors (4-2), 120-110. : nba
+
+URL pattern: https://web.archive.org/web/<capture>/https://old.reddit.com/r/nba/comments/<thread>/

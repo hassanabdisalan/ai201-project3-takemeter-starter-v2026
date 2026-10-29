@@ -201,10 +201,28 @@ the one the post spends most of its words on. A tie-break, not a licence.
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** 200 top-level comments from 24 r/nba threads of
+the 2025–26 season, read from the Internet Archive's saved copies of the
+old.reddit.com pages (reddit.com itself refuses non-browser requests). Three
+thread types, in this order in the file: every archived **[SERIOUS NEXT DAY
+THREAD]** post-game discussion with user posts (18 threads, 75 posts), then
+**Daily Discussion** threads (4 threads, 37 posts), then **[Post Game Thread]**
+posts (Lakers–Kings 27 Oct 2025, all 56; Bucks–Warriors 31 Oct 2025, the first
+32), cut at 200. Posts are in the order the page displayed them; none were
+chosen for what they said. Serious threads were read first on purpose — the
+collection protocol in `milestone4.md` says to widen the source toward argument
+rather than hunt for stat-heavy posts when `breakdown` runs thin. Skipped only
+bot, deleted, stickied and link-only comments. Exact threads and capture
+timestamps: `data/sources.txt`. Collection was scripted with Claude's help;
+every row's text is verbatim.
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+Rows 1–20 (the first twenty Serious-thread posts) are marked `cold` in the note
+column and are to be labelled first, alone, with no tool. The remaining 180 are
+pre-labelled by Claude under the three-step rule and then read and corrected
+one by one. *Labelling not yet done at this commit — all 200 label cells are
+blank.*
 
 **Counts per label:**
 
